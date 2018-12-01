@@ -1,0 +1,61 @@
+﻿@model Model.EF.KhachHang
+
+@{
+    ViewBag.Title = "Xuat";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div style="margin:auto;width:80%">
+    <h2 style="text-align:center">Thông Tin Khách Hàng</h2>
+
+    <div>
+        <hr />
+        <div class="row">
+            <div class="col-md-3">
+
+            </div>
+
+            <div class="col-md-9">
+                <dl class="dl-horizontal" style="display:inline-block;text-align:left;margin-left:auto;width:auto">
+                    <dt style="text-align:left">
+                        Tên Khách Hàng
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.TenKH)
+                    </dd>
+                    <dt style="text-align:left">
+                        CMND
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.CMND)
+                    </dd>
+
+                    <dt style="text-align:left">
+                        Nghề Nghiệp
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.NgheNghiep)
+                    </dd>
+
+                    <dt style="text-align:left">
+                        Địa Chỉ
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.DiaChi)
+                    </dd>
+                </dl>
+
+            </div>
+            <div class="col-md-3">
+
+            </div>
+            <div class="col-md-9">
+                @Html.ActionLink("Thông Tin Hóa Đơn Thanh Toán","Index","HoaDonThanhToans",new {id=Model.MaKH  },null)
+                @*@Html.ActionLink("Thông Tin Hóa Đơn Thanh Toán", "List", "HoaDonThanhToans",Model.MaKH)*@
+            </div>
+        </div>
+        </div>
+</div>
