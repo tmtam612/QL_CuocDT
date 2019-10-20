@@ -1,4 +1,5 @@
 
+
 	window.fbAsyncInit = function() {
 		FB.init({
             appId : '624680341634823',
@@ -108,7 +109,6 @@
 		$.get({
 			url: url,
 			success: function(res) {
-				console.log(res);
 				$('#myModal').modal('show');
 				$('#myModal').append(res);
 			}
@@ -160,3 +160,9 @@
 		$('#create-confirmPass-msg').hide();
 		$('#create-confirmPass-msg').text('');
 	}
+
+	var socket = io.connect('http://localhost:3000');
+	// socket.emit('send', {username: 'abc', message: 'xyz'});
+	socket.on("send", function(data) {
+		console.log(data);
+	});

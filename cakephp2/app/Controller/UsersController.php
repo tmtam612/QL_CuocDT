@@ -1,18 +1,25 @@
 <?php
 App::uses('AppController', 'Controller');
 App::uses('User','Model');
-App::build(array('Vendor' => array(APP . 'Vendor' . DS . 'league' . DS. 'oauth2-google' . DS . 'src'. DS . 'Provider' . DS . 'Google')));
-debug(array('Vendor' => array(APP . 'Vendor' . DS . 'league' . DS. 'oauth2-google' . DS . 'src'. DS . 'Provider'. DS . 'Google')));
-App::uses('Google', 'Vendor');
-// use League\OAuth2\Client\Provider\Google;oauth2-google\src\Provider
+use League\OAuth2\Client\Provider\Google;
+use ElephantIO\Client;
+use ElephantIO\Engine\SocketIO\Version2X;
 class UsersController extends AppController {
-	public $authUrl;
 	// public $newRule = new PackageName\SubFolder\SubSubFolder\Rule();
 	public function index() {
-		$this->createGoogleAPI();
+		$client = new Client(new Version2X('http://localhost:3000', [
+		    'headers' => [
+		        'X-My-Header: websocket rocks',
+		        'Authorization: Bearer 12b3c4d5e6f7g8h9i'
+		    ]
+		]));
+
+		$client->initialize();
+		$client->emit('send', ['foo' => 'bar']);
+		$client->close();
 		$emailSession = $this->Session->read('emailSession');
 		$passSession = $this->Session->read('passSession');
-		$this->set(compact('emailSession','passSession','authUrl'));
+		$this->set(compact('emailSession','passSession'));
 	}
 	public function addUser() {
 		$this->layout = false;
@@ -127,7 +134,7 @@ class UsersController extends AppController {
 		} elseif (empty($_GET['code'])) {
 		
 			// If we don't have an authorization code then get one
-			$this->authUrl = $provider->getAuthorizationUrl();
+			$authUrl = $provider->getAuthorizationUrl();
 			$_SESSION['oauth2state'] = $provider->getState();
 			header('Location: ' . $authUrl);
 			exit;

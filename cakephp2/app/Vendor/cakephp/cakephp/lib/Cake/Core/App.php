@@ -746,6 +746,8 @@ class App {
 		}
 		$fileTries = array();
 		$paths = ($plugin) ? App::path('vendors', $plugin) : App::path('vendors');
+		
+		debug($paths);
 		if (empty($ext)) {
 			$ext = 'php';
 		}
@@ -758,7 +760,9 @@ class App {
 
 		foreach ($fileTries as $file) {
 			foreach ($paths as $path) {
+				
 				if (file_exists($path . $file)) {
+					debug($name);
 					static::_map($path . $file, $name, $plugin);
 					return (bool)include $path . $file;
 				}

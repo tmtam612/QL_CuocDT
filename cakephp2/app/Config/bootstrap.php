@@ -109,3 +109,7 @@ CakeLog::config('error', array(
 	'types' => array('warning', 'error', 'critical', 'alert', 'emergency'),
 	'file' => 'error',
 ));
+/**
+ * Load all vendors plugins which were managed by composer
+ */
+require ROOT . DS . 'vendors' . DS . 'autoload.php';

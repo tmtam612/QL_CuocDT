@@ -70,7 +70,7 @@
 			</div>
 		</div>
 	</div>
-	<input type="hidden" id="loginGoogle" data-url="<?php echo isset($authUrl) && !empty($authUrl) ? $authUrl : '';?>" />
+	<input type="hidden" id="loginGoogle" data-url="<?php  echo Router::url('createGoogleAPI');?>" />
 	<input type="hidden" id="linkCreate" data-url="<?php echo Router::url('add');?>" />
 	<input type="hidden" id="linkCreateUser" data-url="<?php echo Router::url('addUser');?>" />
 	<input type="hidden" id="linkLogin" data-url="<?php echo Router::url('loginNormal');?>" />

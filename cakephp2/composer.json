@@ -22,7 +22,8 @@
 		"google/apiclient": "^2.0",
 		"cakedc/users": "@stable",
 		"league/oauth2-google": "^3.0",
-		"league/oauth2-client": "^2.4"
+		"league/oauth2-client": "^2.4",
+		"wisembly/elephant.io": "^3.3"
 	},
 	"suggest": {
 		"ext-openssl": "You need to install ext-openssl or ext-mcrypt to use AES-256 encryption",

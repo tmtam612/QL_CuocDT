@@ -41,7 +41,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 		echo $this->Html->script('bootstrap.min');
 		echo $this->Html->script('jquery-ui');
 		//echo $this->Html->css('cake.generic');
-		
+		echo $this->Html->script('socket.io');
 		echo $this->Html->script('popper');
 		echo $this->Html->script('select2.min');
 		echo $this->Html->script('main');

@@ -1,0 +1,9 @@
+<script src="/socket.io/socket.io.js"></script>
+<script>
+  var socket = io('http://localhost:3000');
+  var data = 1;
+  socket.emit('send', {username: 'abc', message: 'xyz'});
+  socket.on('new_order', function (data) {
+    console.log(data);
+  });
+</script>

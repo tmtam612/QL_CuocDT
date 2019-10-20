@@ -798,3 +798,101 @@ SELECT DISTINCT table_schema AS schema,
 				WHERE table_name = ? AND table_schema = ? AND table_catalog = ?
 				ORDER BY ordinal_position
 SELECT "User"."email" AS "User__email" FROM "public"."users" AS "User"   WHERE "delete_flg" = 'FALSE' AND "email" = 'tranminhtam6123@yahoo.com' AND "password" = '123'
+SET search_path TO "public"
+SELECT table_name as name FROM INFORMATION_SCHEMA.tables WHERE table_schema = ?
+SELECT DISTINCT table_schema AS schema,
+					column_name AS name,
+					data_type AS type,
+					is_nullable AS null,
+					column_default AS default,
+					ordinal_position AS position,
+					character_maximum_length AS char_length,
+					character_octet_length AS oct_length,
+					pg_get_serial_sequence(attr.attrelid::regclass::text, attr.attname) IS NOT NULL AS has_serial
+				FROM information_schema.columns c
+				INNER JOIN pg_catalog.pg_namespace ns ON (ns.nspname = table_schema)
+				INNER JOIN pg_catalog.pg_class cl ON (cl.relnamespace = ns.oid AND cl.relname = table_name)
+				LEFT JOIN pg_catalog.pg_attribute attr ON (cl.oid = attr.attrelid AND column_name = attr.attname)
+				WHERE table_name = ? AND table_schema = ? AND table_catalog = ?
+				ORDER BY ordinal_position
+SELECT COUNT(*) AS "count" FROM "public"."users" AS "User"   WHERE "User"."email" = 'tmtam2@gmail.com'
+SELECT COUNT(*) AS "count" FROM "public"."users" AS "User"   WHERE "User"."email" = 'tmtam2@gmail.com'
+INSERT INTO "public"."users" ("name", "email", "password", "modified", "created") VALUES ('tâm', 'tmtam2@gmail.com', '$2a$10$wpWH/Bb1FLYjSwM183gboOE2lrC4cOvIe/fRHGY2c94BUqcvcro0O', '2019-10-10 17:23:20', '2019-10-10 17:23:20')
+SET search_path TO "public"
+SELECT COUNT(*) AS "count" FROM "public"."users" AS "User"   WHERE "User"."email" = 'tmtam2@gmail.com'
+SET search_path TO "public"
+SELECT table_name as name FROM INFORMATION_SCHEMA.tables WHERE table_schema = ?
+SELECT DISTINCT table_schema AS schema,
+					column_name AS name,
+					data_type AS type,
+					is_nullable AS null,
+					column_default AS default,
+					ordinal_position AS position,
+					character_maximum_length AS char_length,
+					character_octet_length AS oct_length,
+					pg_get_serial_sequence(attr.attrelid::regclass::text, attr.attname) IS NOT NULL AS has_serial
+				FROM information_schema.columns c
+				INNER JOIN pg_catalog.pg_namespace ns ON (ns.nspname = table_schema)
+				INNER JOIN pg_catalog.pg_class cl ON (cl.relnamespace = ns.oid AND cl.relname = table_name)
+				LEFT JOIN pg_catalog.pg_attribute attr ON (cl.oid = attr.attrelid AND column_name = attr.attname)
+				WHERE table_name = ? AND table_schema = ? AND table_catalog = ?
+				ORDER BY ordinal_position
+SELECT "User"."email" AS "User__email" FROM "public"."users" AS "User"   WHERE "email" = 'tmtam2@gmail.com' AND "password" = 'minhtam612'
+SET search_path TO "public"
+SELECT table_name as name FROM INFORMATION_SCHEMA.tables WHERE table_schema = ?
+SELECT DISTINCT table_schema AS schema,
+					column_name AS name,
+					data_type AS type,
+					is_nullable AS null,
+					column_default AS default,
+					ordinal_position AS position,
+					character_maximum_length AS char_length,
+					character_octet_length AS oct_length,
+					pg_get_serial_sequence(attr.attrelid::regclass::text, attr.attname) IS NOT NULL AS has_serial
+				FROM information_schema.columns c
+				INNER JOIN pg_catalog.pg_namespace ns ON (ns.nspname = table_schema)
+				INNER JOIN pg_catalog.pg_class cl ON (cl.relnamespace = ns.oid AND cl.relname = table_name)
+				LEFT JOIN pg_catalog.pg_attribute attr ON (cl.oid = attr.attrelid AND column_name = attr.attname)
+				WHERE table_name = ? AND table_schema = ? AND table_catalog = ?
+				ORDER BY ordinal_position
+SELECT COUNT(*) AS "count" FROM "public"."users" AS "User"   WHERE "User"."email" = 'tmtam3@gmail.com'
+SELECT COUNT(*) AS "count" FROM "public"."users" AS "User"   WHERE "User"."email" = 'tmtam3@gmail.com'
+INSERT INTO "public"."users" ("name", "email", "password", "modified", "created") VALUES ('tmtam', 'tmtam3@gmail.com', '$2a$10$WYPRpnZ041Q/sdkAa0jGA.oil86QAJ/roKEcu1GF5qpwWTwKkpT5S', '2019-10-10 17:27:57', '2019-10-10 17:27:57')
+SET search_path TO "public"
+SELECT table_name as name FROM INFORMATION_SCHEMA.tables WHERE table_schema = ?
+SELECT DISTINCT table_schema AS schema,
+					column_name AS name,
+					data_type AS type,
+					is_nullable AS null,
+					column_default AS default,
+					ordinal_position AS position,
+					character_maximum_length AS char_length,
+					character_octet_length AS oct_length,
+					pg_get_serial_sequence(attr.attrelid::regclass::text, attr.attname) IS NOT NULL AS has_serial
+				FROM information_schema.columns c
+				INNER JOIN pg_catalog.pg_namespace ns ON (ns.nspname = table_schema)
+				INNER JOIN pg_catalog.pg_class cl ON (cl.relnamespace = ns.oid AND cl.relname = table_name)
+				LEFT JOIN pg_catalog.pg_attribute attr ON (cl.oid = attr.attrelid AND column_name = attr.attname)
+				WHERE table_name = ? AND table_schema = ? AND table_catalog = ?
+				ORDER BY ordinal_position
+SELECT COUNT(*) AS "count" FROM "public"."users" AS "User"   WHERE "User"."email" = 'tmtam5@gmail.com'
+SELECT COUNT(*) AS "count" FROM "public"."users" AS "User"   WHERE "User"."email" = 'tmtam5@gmail.com'
+INSERT INTO "public"."users" ("name", "email", "password", "modified", "created") VALUES ('tmtam', 'tmtam5@gmail.com', 'minhtam612', '2019-10-10 17:29:05', '2019-10-10 17:29:05')
+SET search_path TO "public"
+SELECT table_name as name FROM INFORMATION_SCHEMA.tables WHERE table_schema = ?
+SELECT DISTINCT table_schema AS schema,
+					column_name AS name,
+					data_type AS type,
+					is_nullable AS null,
+					column_default AS default,
+					ordinal_position AS position,
+					character_maximum_length AS char_length,
+					character_octet_length AS oct_length,
+					pg_get_serial_sequence(attr.attrelid::regclass::text, attr.attname) IS NOT NULL AS has_serial
+				FROM information_schema.columns c
+				INNER JOIN pg_catalog.pg_namespace ns ON (ns.nspname = table_schema)
+				INNER JOIN pg_catalog.pg_class cl ON (cl.relnamespace = ns.oid AND cl.relname = table_name)
+				LEFT JOIN pg_catalog.pg_attribute attr ON (cl.oid = attr.attrelid AND column_name = attr.attname)
+				WHERE table_name = ? AND table_schema = ? AND table_catalog = ?
+				ORDER BY ordinal_position
+SELECT "User"."email" AS "User__email" FROM "public"."users" AS "User"   WHERE "email" = 'tmtam5@gmail.com' AND "password" = 'minhtam612'

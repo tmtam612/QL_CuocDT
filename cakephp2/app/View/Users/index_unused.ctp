@@ -4,4 +4,4 @@
 													'controller' => 'users',
 													'action' => 'logout'
 												));?>" />
-<input type="button" class="btn btn-danger" onclick="logout()" value="Go Back"/>
+<input type="button" class="btn btn-danger" onclick="logout()" value="Log out"/>
